@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Web Programming</h1>
+    <ul id="items">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Javascript</li>
+    </ul>
+    <script>
+        // 삭제 메서드: 요소.remove()
+        // heading = document.querySelector("h1")
+        // heading.remove()
+        const css = document.querySelector("#items>li")[1];
+        let parentN = css.parentNode; // css의 부모노드를 알려준다, 부모 노드: 찾기 요소.parentNode
+        // css의 부모노드에서 자식노드 css를 삭제, 자식 노드 제거: 부모노드.removeChild(자식 노드)
+        css.addEventListener("click",()=>{parentN.removeChild(css);})
+    </script>
+</body>
+</html>

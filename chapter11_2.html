@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let numbers = [1,2,3,4,5]
+        let newnumbers = numbers.map(number => number*2); // map은 forEach처럼 각 항목을 *2로 수행해 계산하는 함수
+        newnumbers // [2,4,6,8,10] 
+        // map(함수(값, 인덱스, 배열))
+
+        // filter(함수(값, 인덱스, 배열)) 로 특정 조건에 맞는 요소만 골라내는 메서드
+        let scores = [90,35,64,88,45,92]
+        highscores = scores.filter(score => score>=80) // [90,88,92]
+        
+        // reduce(함수(누산기, 현잿값, 인덱스, 원래 배열), 초깃값) 누적의 합
+        let result = numbers.reduce((total,current) => total + current, 0);
+        // total이 0으로 초기화 되고 각 current 1개씩의 값이 더해져 total 에 저장된다
+        result // 15
+
+        let bag = new Map() // new Map()객체 생성
+        bag.set("color","red") // .set(키, 값)
+        let bag1 = new Map([["color","red"],["age",25]]) // 큰 []안에 각 요소의 []를 넣어 객체 선언
+        bag.set("type","mini").set("purpose","daily") // 각 값을 추가에 추가를 한다.
+        // .size: 요소의 개수를 알려줌     .get(키): 해당 키의 값을 출력함    .has(키): 해당 키가 있으면 true 없으면 false 
+        // .delete(키): 해당 키를 삭제, 성공시 true 없으면 false    .clear(): 해당 맵의 요소를 전부 삭제
+        // .keys(): 키만 가져옴  .values(): 키에 있는 값만을 가져옴
+        // .entries(): 키와 값을 각각 가져온다
+
+        let numset = new Set(); // 값이 중복이 될수가 없다.
+        numset.add("one")
+        numset.add("two")
+        // .size: 요소의 개수를 알려줌     .has(값): 해당 값이 있으면 true 없으면 false 
+        // .delete(값): 해당 값을 삭제, 성공시 true 없으면 false    .clear(): 해당 맵의 요소를 전부 삭제
+        // .keys(): 모든 값을 가져옴  .values(): 모든 값을 가져옴
+        // .entries(): 값과 값을 각각 가져온다  =>  {'값1' => '값1', '값2' => '값2', ....}
+        
+    </script>
+</body>
+</html>

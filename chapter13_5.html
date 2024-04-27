@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // async는 new Promise를 대신한다
+        async function whatsYourFavorite(){
+            let fav = "Javascript";
+            return fav; // fav가 resolve의 역할을 하는 것
+        }
+
+        async function displaySubject(subject){ // new Promise를 대체
+            return `Hello, ${subject}`;
+        }
+
+        async function init(){
+            const response = await whatsYourFavorite(); //.then을 대신한다, 변수명으로 저장이 가능
+            const result = await displaySubject(response); // 해당 변수명을 다시 await가능
+            console.log(result);
+        }
+
+        init(); // 즉시수행
+    </script>
+</body>
+</html>

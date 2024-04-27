@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>버튼</button>
+
+    <!-- 히스토리, 뒤돌아가기 버튼 활성화 x -->
+    <button onclick="location.replace('http://www.easyspub.co.kr')">이동</button>
+    <script>
+        // let width = window.innerWidth // 넓이를 반환하는 함수
+        function openpop(){
+            // window.open("경로","창 이름","창 옵션")
+            window.open("notice.html","이벤트팝업","width=600 height=500 left=300 top=200")
+        }
+        const bttn= document.querySelector("button")
+        bttn.onclick = openpop;
+
+        // window.close()
+
+        // 스크린에서 사용 가능한 넓이와 높이 
+        // screen.availWidth
+        // screen.availHeight        
+    </script>
+</body>
+</html>

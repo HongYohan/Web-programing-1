@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+        }
+        body {
+            height:100vh;
+            display:flex; /*자식 요소를 유연하게 배치하고 정력하기 위해*/
+            flex-direction: column;/*자식 요소 자식요소 수평방향에서 가운데 정렬치방향을 수직방향, 즉 위에서 아래로 배치*/
+            justify-content: center;/*자식요소를 수평방향으로 가운데 정렬 배치*/
+            align-items: center;/*수직방향에서 가운데 정렬*/
+        }
+        #profile {
+            display:flex;
+            flex-direction: row;/*수평으로 배치*/
+            justify-content: center;
+            align-items: center;
+            border:1px solid #ccc;
+            border-radius:5%;
+            padding:10px;
+        }
+        h1 {
+            font-size:2rem;  
+            margin-bottom:20px ;
+        }
+        p {
+            font-size:0.8rem;
+            line-height:1.8;
+        }
+        .user {
+            color:blueviolet;
+        }
+        .dark {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title">MY Profile</h1>
+    <div id="profile">
+        <img src="images/pf.png" alt="도래미">
+        <div id ="desc">
+            <p class="user" id="name">이름: 도레미</p>
+            <p class="user">주소: somewhere</p>
+            <p class="user">연락처: 1234-5678</p>
+        </div>
+    </div>
+    <div>
+        <button>다크 모드로 바꾸기</button>
+    </div>
+
+    <script>
+        const title = document.querySelector("#title"); // 각요소를 가져와 변수명에 저장
+        const pfimg = document.querySelector("#profile img"); // id=profile 의 하위 img를 가져옴
+        const name = document.querySelector("#name");
+
+        title.onclick = () => title.innerText="프로필"; // 클릭시 해당 변수의 텍스트를 변경함
+        title.ondblclick =()=> title.innerText="MY Profile"; // 원본으로 돌아옴
+
+        name.onclick = () => name.innerText="이름: 홍요한";
+        name.ondblclick =()=> name.innerText="이름: 도레미";
+
+        pfimg.onclick = () => pfimg.src = "images/pf2.png";
+        pfimg.ondblclick =()=> pfimg.src = "images/pf.png";
+        
+        const bttn = document.querySelector("button");
+        bttn.onclick = function() {
+            document.body.classList.toggle("dark");
+        }
+    </script>
+
+    <!-- <script>
+        const title = document.querySelector("#title");
+        title.onclick = () => {
+            title.classList.add("clicked"); // clicked라는 클래스의 css가 있다면 추가
+            title.classList.remove("clicked"); // clicked라는 클래스의 css가 없다면 삭제
+            title.classList.contains("clicked"); // clicked라는 클래스의 css가 있다면 true|없다면 false
+            title.classList.toggle("clicked"); // clicked라는 클래스의 css가 없다면 추가(add)| 있다면 삭제(remove)
+        }
+    </script> -->
+</body>
+</html>

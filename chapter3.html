@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--<h1>학점 구하기</h1>
+    <script>
+        let score = parseInt(prompt("프로그래밍 점수"));
+        if(score!==null){
+            if(score>=90){
+                alert("A학점");
+            } else if(score>=80){
+                alert("B학점");
+            } else{
+                alert("C학점");
+            }
+        }
+        else{alert("점수를 입력하시오!")} // null 값이 들어올 경우
+    </script> -->
+
+
+    <!-- <h1>3의 배수 체크하기</h1>
+    <script>
+        let num = parseInt(prompt("숫자를 입력하세요"));
+        if(num!==null){
+            if(num%3===0){ // 같다라는 의미 ===
+                alert("3의 배수입니다.");
+            }
+            else{
+                alert("3의 배수가 아닙니다.")
+            }
+        }
+        else{
+            alert("입력이 취소 되었습니다.");
+        }
+        // num3=(num%3===0)?alert("3의 배수입니다."):alert("3의 배수가 아닙니다."); 3항 연산자
+        // alert(num3);
+    </script> -->
+
+
+    <!-- <h1>for 반복문</h1>
+    <script>
+        const students = ['park','kim','lee','kang'];
+        for(let i=0;i<students.length;i++){
+            document.write(`${students[i]}, `);
+        }
+        document.write("<hr>")
+        // function(student)는 콜백함수를 의미한다
+        students.forEach(function(student){document.write(`${student}, `)});
+        // function 함수는 길기때문에 '함수명 =>' 화살표 함수로 수행가능
+        // students.forEach(student => document.write(`${student}, `));
+        document.write("<hr>")
+        for(value of students){
+            document.write(`${value}, `);
+        }
+        document.write("<hr>")
+        document.write("for in은 키와 값으로 이루어진 객체<br>")
+        const gitBook={
+            title :"깃&깃허브입문",
+            pubDate : "2-19-12-06",
+            pages:272,
+            finished : true
+        }
+        for(key in gitBook){
+            document.write(`${key}:${gitBook[key]}<br>`);
+        }
+    </script> -->
+
+
+    <!-- <h1>소수 판별프로그램</h1>
+    <script>
+        let num = parseInt(prompt("정수 입력"));
+        if(num===2){
+            alert(`${num}는 소수입니다`);
+        }
+        else{
+            for(let i =2;i<num;i++){
+                if(num%i ===0){
+                    alert(`${num}는 소수가 아닙니다`);
+                }
+                else alert(`${num}는 소수입니다`);
+                break;
+            }
+        }
+    </script> -->
+
+
+    <!-- <h1>별 찍기</h1>
+    <script>
+        for(let k =0;k<5;k++){
+            for(var i= 0;i<30;i++){
+                document.write("*");
+            }
+            document.write('<br>');
+        }
+
+        document.write('<br><br>');
+
+        for(let a =10;a>0;a--){
+            for(var c=10;c>a;c--){
+                document.write("&nbsp");
+            }
+            for(var b =0;b<a;b++){
+                document.write("*");
+            }
+            document.write("<br>");
+        }
+    </script> -->
+</body>
+</html>

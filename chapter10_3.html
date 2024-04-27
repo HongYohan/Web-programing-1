@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 패턴[플래그]
+        // /\d{3}/ \d는 숫자를 {3}은 3자리를 즉 3자리 숫자를 반환하는 정규식이다
+        let str = "ES2015 is powerful!"
+        str.match(/ES6/) // 정규식 표현에 일치하는 부분을 찾음, 못찾으면 NULL로 반환
+        str.replace(/ES2015/,"ES6"); // ES2015를 찾아서 ES6으로 변화시킨다.
+        /es/i.test(str) // es를 str에서 찾는데 i 즉 영소문자와 대문자를 구분하지 않고 찾는다.
+        /es/igm.test(str) // es를 찾는데 대소문자 구분 X, g는 모든 es 패턴을 찾고 m은 문자열의 행이 바뀌어도 검색
+
+        // 문자 클래스
+        str.match(/ES\d/) // ES와 숫자 1개를 출력 즉, ES2로 나온다
+        // \d: 숫자, \D: 숫자제외 문자, \s: 모든 공백,줄바꿈 등, \S: 공백 줄바꿈 등을 제외한 문자
+        // \w: 단어에 들어가는 문자 숫자 언더바 포함, \W: 단어에 들어가지 않는 모든 문자
+
+        let hello = "Hello, everyone";
+        /^H/.test(hello); // true, 즉 ^: 시작의 위치를 의미, H로 시작하냐?
+        /[^0-9]/.test(hello); // [^]: 대괄호 안의 ^는 해당 범위의 Not을 의미한다.
+        /one$/.test(hello); // true, 즉 &: 마지막의 위치를 의미, one으로 끝나냐?
+
+        // 패턴{n,m}
+        str.match(/o{2}/) // 'oo'가 반복되는 패턴을 찾는다
+        
+        // or 검색
+        let regexp = /ES2015|ES6/
+        regexp.test(str) // true, 둘중의 하나만 존재한다면 true를 반환함
+        //          / \ /          \: 원래 문자열로 반환함
+        // [a-z] : a부터 z까지
+        // x+: x가 한번 이상 반복되는 문자열   x?: x가 0번 또는 1번 있는 문자열
+        // x*: x가 0번 이상 반복되는 문자열    .: 문자 하나 => [a.c] == abc or axc등등 가능
+
+        // 전개 연산자, 문자열을 문자 배열로 전환하기
+        array1 = hello.split("") // 모든 1개 1개씩 나누어진다
+        array2 = [...hello] // ...hello의 문자열을 배열로 바꿈
+        array3 = Array.from(hello)
+        str1 = array1.join("") // "Hello, everyone";  문자 배열을 문자열로 조합해 출력한다
+</script>
+</body>
+</html>

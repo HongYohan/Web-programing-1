@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let student = ['kim','lee','park'];
+        // 객체를 json형식으로 변경후 localStorage에 넣는다
+        localStorage.setItem("students", JSON.stringify(student));
+
+        let localData;
+        if(localStorage.getItem("students")===null) localData=[]; // students라는 키가 없다면 null
+        else localData = JSON.parse(localStorage.getItem("students"));
+
+        localData.push("choi") // 새로운 값을 변수 리스트에 넣음
+        localStorage.setItem("students", JSON.stringify(localData));
+        console.log(`추가 후: ${localStorage.getItem("students")}`);
+
+        const lee_index = localData.indexOf("lee"); // lee의 인덱스 번호를 반환
+        localData.splice(lee_index,1); // lee 부터 1개의 데이터 삭제, 즉 본인 데이터 삭제
+        localStorage.setItem("students",JSON.stringify(localData));
+        console.log(`삭제 후: ${localStorage.getItem("students")}`);
+    </script>
+</body>
+</html>

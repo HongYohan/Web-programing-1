@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Book(title, pages, done=false){
+            this.title = title;
+            this.pages = pages;
+            this.done = done;
+            this.finish = function(){
+                let str =""
+                this.done === false?str="읽기중":str="완독";
+                return str;
+            }
+        }
+
+        let book1 = new Book("웹 표준의 정석", 648, false);
+        let book2 = new Book("점프 투 파이썬", 360, true);
+
+        class Book2 {
+            constructor(title, pages, done){ // 실시
+                this.title = title;
+                this.pages = pages;
+                this.done = done;
+            }
+            finish(){
+                let str="";
+                this.done===false?str="읽는중":str="완독";
+                return str;
+            }
+        }
+
+        // class 선언과 동시에 할당
+        let book3 = new Book2("웹 표준의 정석", 648, false);
+        let book4 = new Book2("점프 투 파이썬", 360, true);
+    </script>
+</body>
+</html>

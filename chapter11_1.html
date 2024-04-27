@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const animal = ['bird','cat'];
+        const fruits = ['apple','banana','cherry'];
+        [...animal,...fruits] // animal.concat(fruits) 같은 의미이다
+        // 배열은 참조형 변수이고 전개구문은 복사하는 형식이다
+
+        const book = {
+            title: "Javascript",
+            pages: 500
+        }
+        book["published date"] = "2022-01" // 새로운 데이터를 추가하는 형식이다
+
+        function add(a,b){
+            return a+b;
+        }
+        let obj = {
+            [`${add(10,20)}key`]: "계산식 키"
+        }
+        obj // add(a,b)함수를 수행함 그래서 30key : "계산식 키"
+        obj.age = 25 // obj에 age라는 키와 25라는 값이 생긴다.
+
+        // Symbol(값) 은 변수명[심볼값]으로 접근이 가능하다
+        
+        let [apple, peach] = ["사과", "복숭아"] // apple은 사과 peach는 복숭아로 나온다
+        let [teacher,...student] = ['kim','lee','park','choi'];
+        // teacher은 kim이고 student는 ['lee','park','choi']로 나온다
+        let [x,y]=[y,x] // x와 y의 값을 서로 변경한다
+
+        // {var1 , var2} = {var1:값1, var2:값2....}
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <h1>수강생 명단</h1>
+        <div id="result"></div>
+    </div>
+    <script>
+        let xhr = new XMLHttpRequest(); // http 통신이 가능한 객체
+
+        xhr.open("GET","json/chapter12_1.json"); // GET방식, JSON 파일을 가져옴 
+        xhr.send(); // 서버에 요청을 보냄
+
+        xhr.onreadystatechange = function () {
+            // 객체의 상태 === 4 이고 http 응답 상태 === 200
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                let students = JSON.parse(xhr.responseText); // JSON파일을 객체 형식으로 변경함
+                renderHTML(students); // 함수 실행
+            }
+        };
+
+        function renderHTML(contents) { // 객체를 가져옴
+            let output = ""; // 새로운 변수
+            for (let content of contents) { // 각 객체의 값을 content로 하나씩 수행
+                output += `
+                <h2>${content.name}</h2>
+                <ul>
+                    <li>전공 : ${content.major}</li>
+                    <li>학년 : ${content.grade}</li>
+                </ul>
+                <hr>
+                `;
+            }
+            document.getElementById("result").innerHTML = output;
+        }
+
+        // 다음과 같이 forEach문을 사용해도 됩니다.
+
+        // function renderHTML(contents) {
+        //   let output = '';
+        //   contents.forEach(function (content) {
+        //     output += `
+        //       <h2>${content.name}</h2>
+        //       <ul>
+        //         <li>전공 : ${content.major}</li>
+        //         <li>학년 : ${content.grade}</li>
+        //       </ul>
+        //       <hr>
+        //     `;
+        //   });
+        //   document.getElementById("result").innerHTML = output;
+        // }
+    </script>
+</body>
+</html>

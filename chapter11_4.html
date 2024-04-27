@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [1,2,3,4,5]
+        let it = arr[Symbol.iterator]()
+        it.next() // {value: 1, done: false} 값이 없을때는 value: undefined, done: true로 바뀜
+
+        function* gen(){
+            yield 1;
+            yield 2;
+            yield 3;
+        }
+
+        let g1 = gen() // 제너레이터 객체임
+        g1.next() // {value: 1, done: false}
+    </script>
+</body>
+</html>

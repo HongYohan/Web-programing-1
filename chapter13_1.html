@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <script>
+        function order(coffee,callback){ // callback은 메서드이다
+            console.log(`${coffee} 주문 접수`)
+            setTimeout(()=>{
+                callback(coffee); // 메서드에 매개변수를 넣어서 불러옴
+            },3000);
+        }
+        function display(result){ // 실행 함수
+            console.log(`${result} 준비 완료`)
+        }
+        order("아메리카노",display); // 매개변수 1에는 값을 2에는 함수를 넣음
+    </script> -->
+
+    <script>
+        let likePizza = true;
+        const pizza = new Promise((resolve,reject)=>{ // 새로운 프로미스 객체 생성
+            if(likePizza) resolve('피자를 주문합니다.'); // .then으로 수행된다
+            else reject('피자를 주문하지 않습니다.'); // .catch로 감
+        })
+
+        pizza
+        .then(result => console.log(result)) // 세미콜론 사용 불가
+        .catch(err=>console.log(err)) // 오류 발생시 수행
+        .finally(()=>console.log('완료')) // 성공 실패 상관없이 수행
+    </script>
+</body>
+</html>

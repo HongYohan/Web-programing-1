@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>지오로케이션 API 연습</title>
+    <style>
+    * {
+      margin:0;
+      padding:0;
+      box-sizing: border-box;
+    }
+    body {            
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      gap:20px;
+    }
+    button {
+        margin-top:20px;
+        padding:10px 20px;    
+    }
+    #result {
+        padding:10px 20px;
+    }
+    </style>
+</head>
+<body>
+    <button id="getLocation">위치 정보 가져오기</button>
+    <div id="result"></div>
+
+    <script>
+        const getLocation = document.querySelector("#getLocation");
+        getLocation.addEventListener('click', function(e) {
+            e.preventDefault();
+            // window.navigator 객체 안에 geolocation 객체가 있다
+            if (navigator.geolocation) { // geolocation 객체 사용이 가능하다면
+                // showPosition을 수행, 오류 발생시 errorPosition을 수행
+                navigator.geolocation.getCurrentPosition(showPosition, errorPosition); // 사용자의 현재 위치 확인
+                const options = {
+                    enableHighAccuracy: true, // 정확도를 높일건지 물어봄
+                    timeout: 5000, // 유효 기간은 5000ms 이고 지정한 기간이 지나면 새로운 위치 정보를 가져온다
+                    maximumAge: 0 // 위치 정보를 확인하는데 걸리는 시간을 의미
+                };
+
+                // 지정한 시간마다 위치 확인하기
+                let watchId = navigator.geolocation.watchPosition(showPosition, errorPosition, options);
+
+                setTimeout(function() {
+                    navigator.geolocation.clearWatch(watchId);
+                }, 30000); // 30초 후에 watchPosition 메서드를 종료시킨다
+            
+            } else {
+                alert('지오로케이션을 지원하지 않습니다.');
+            }
+        });
+
+        function showPosition(position) { // 주소 정보나 경도/위도 같은 좌표 정보, 가져온 시간 등이 저장됩니다
+            document.querySelector("#result").innerHTML = `
+                <b>위도:</b> ${position.coords.latitude}, <b>경도:</b> ${position.coords.longitude}
+            `; // 위치의 위도 표기: position.coords.latitude, 위치의 경도 표기: position.coords.longitude
+        };
+    
+        function errorPosition(err) {
+            alert(err.message); // 에러 생길시 해당 메시지만 표기
+        }
+    </script>
+</body>
+</html>

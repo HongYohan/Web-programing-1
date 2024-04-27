@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="메인.css">
+    <!-- <style>/*event 객체*/
+        p {
+          font-size:1.2rem;
+          margin-bottom:20px;
+        }
+        #box{
+          width:200px;
+          height:200px;
+          border:1px solid #222;
+          border-radius:5%;
+        }
+    </style> -->
+
+    <style> /*키보드 스타일*/
+        #result {
+          text-align: center;
+          font-weight:bold;
+          font-size:1.5em;
+          color:crimson;
+        }
+    </style>
+</head>
+<body>
+    <!-- <h1>버튼 클릭</h1>
+    <button onclick="alert('클릭!')">버튼</button>
+    <button id="bttn">버튼</button>
+    <script>
+        const bttn = document.querySelector("#bttn");
+        bttn.onclick = () => {
+            alert("클릭");
+            document.body.style.backgroundColor="black" // 내부 스타일을 이용해 배경화면 변환
+        }
+    </script> -->
+
+
+    <!-- <h1>이벤트 리스너</h1>
+    <button id="bttn">버튼</button>
+    <script>
+        const bttn = document.querySelector("#bttn");
+        // addEventListener("이벤트명",함수)
+        bttn.addEventListener("click",()=>{ // 이벤트 리스너를 이용, 이벤트 명은 ""안에 표기
+            alert("클릭");
+        });
+    </script> -->
+
+
+    <!-- <h1>텍스트 개수</h1>
+    <div>
+        <input type="text" id="tx" placeholder="글자 입력">
+        <button id="bttn">버튼</button>
+        <div id="result"></div>
+    </div>
+    <script>
+        const bttn = document.querySelector("#bttn");
+        const result = document.querySelector("#result");
+        bttn.addEventListener("click",()=>{
+            const tx = document.querySelector("#tx").value; // 변경되는 값을 가지는 것은 내부에 선언하는것이 좋다
+            let count = tx.length;
+            result.innerText=`${count}`;
+        })
+    </script> -->
+
+
+    <!-- <h1>event객체</h1>
+    <p>사각형 내부를 클릭해 보세요</p>
+    <div id="box"></div>
+    <script>
+        const box = document.querySelector("#box");
+        box.addEventListener("click",(e)=>{ // 함수에 대한 함수명 선언
+            alert(`이벤트 발생 위치: ${e.pageX},${e.pageY}`)  // 해당 함수명에서 해당 이벤트 수행
+        })
+    </script> -->
+
+
+    <h1>키보드의 아무 키나 눌러보세요</h1>
+    <div id="result"></div>
+    <script>
+        const body = document.body; // 몸통에 키를 눌렀을때 발생
+        const result = document.querySelector("#result");
+
+        body.addEventListener("keydown", (e)=>{ // 몸통에 키를 눌렀을때 해당 함수 수행
+            result.innerText=`
+            code: ${e.code}
+            key: ${e.key}
+            `
+        }) // e.code는 키보드 눌렀을때 해당 키보드의 코드 반환, e.key는 키보드 명을 반환
+    </script>
+</body>
+</html>

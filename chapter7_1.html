@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중간 노드 삽입</title>
+</head>
+<body>
+    <h1>노드 리스트 살펴보기</h1>
+    <p>HTML</p>
+    <p>CSS</p>
+    <p>Javascript</p>
+    <script>
+        let newP=document.createElement("p") // 새로운 p 태그 생성
+        let textN=document.createTextNode("중간노드삽입")
+        newP.appendChild(textN) // newp 즉 새로운 p요소에 textN이라는 속성값을 넣음
+        let base = document.querySelectorAll("p")[1] // p의 모든 요소중 인덱스 1번을 선택
+        document.body.insertBefore(newP,base); // body안에 삽입인데 위치는 (새노드, 기준노드) 즉, 기준노드 앞에 새노드 삽입
+
+        // 그림 속성 노드 삽입하기
+        let newImg = document.createElement("img");
+        let srcNode=document.createAttribute("src");
+        srcNode.value="images/wall.jpg";
+        newImg.setAttributeNode(srcNode);
+        document.body.appendChild(newImg);
+    </script>
+    
+</body>
+</html>

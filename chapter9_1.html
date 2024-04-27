@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let book1 ={
+            title : "웹 표준의 정석",
+            pages : 648
+        }
+
+        // 해당 키를 이용해 값 접근
+        // book1.title
+        // book1["title"]
+        
+        book1.pages=50 // 값 변경
+        book1.author="고경희" // 해당 키가 없어서 키를 추가
+
+        delete book1.pages // 객체 삭제
+
+        let student ={
+            name: "doremi",
+            score : {
+                history:85,
+                science:94,
+                // 메서드 명: function()
+                average:function(){
+                    return (this.history + this.science)/2
+                }
+            }
+        }
+        student.score.history // 85
+        student.score.average() // score 안에있는 average() 메서드 수행
+
+        let bag1 = {
+            color: "blue",
+            width: 30,
+            height: 50
+        }
+        let bag2 = bag1
+        bag2.color ='red' // red로 바꾸면 bag1과 bag2의 color를 변경할수 있다
+    </script>
+</body>
+</html>

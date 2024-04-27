@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4장 함수 연습</title>
+</head>
+<body>
+    <!-- <h1>두수를 곱셈</h1>
+    <script>
+        function multiple(a,b){ // a,b는 매개변수를 의미
+            return a*b;
+        }
+        document.write(`두수를 곱한 값: ${multiple(10,20)}`);
+    </script>-->
+
+
+    <!-- <h1>즉시 실행 합수</h1>
+    <script>
+        (function(a,b){
+            let sum=a+b;
+            document.write(`즉시 실행 함수 실행 결과: ${sum}`)
+        }(100,200)); // 괄호 안에 바로 인수값을 넣음
+    </script> -->
+
+
+    <!-- <h1>화살표 함수 실행</h1>
+    <script>
+        let num =(a,b)=> { // function키를 대신해서 화살표를 이용 즉시 실행 x
+            let sum =a+b;
+            document.write(`화살표 함수 실행 결과 : ${sum}`);
+        }
+        num(100,200);
+    </script> -->
+
+
+    <!-- <h1>콜백 함수</h1>
+    <button>버튼</button>
+    <script>
+        const bttn = document.querySelector("button"); //버튼 요소를 가져옴
+        function display() {alert("버튼을 클릭했습니다")};
+        bttn.addEventListener("click",display); // display()함수를 콜백한다
+        bttn.addEventListener("click",()=>{alert("버튼을 클릭했습니다")}); // 한범만 사용할 함수여서 직접 선언함
+    </script> -->
+
+    
+    <!-- <h1>이름과 나이</h1>
+    <script>
+        function showData(name,age){
+            alert(`이름: ${name}, 나이: ${age}`);
+        }
+        function getData(callback){ //callback은 매개변수를 의미  즉, callback == showData;
+            let name = prompt("이름을 입력하세요.");
+            let age = parseInt(prompt("나이를 입력하세요."));
+            callback(name,age); // showData(name,age)와 같은 의미
+        }
+        getData(showData); // 매개변수를 showData 즉, 함수명으로 매개변수를 만들어둠
+    </script> -->
+
+
+    <!-- <h3>나머지 매개변수</h3>
+    <script>
+        function addnum(...nums){
+            let sum =0;
+            for(let num of nums){ // for in은 문자열로 입력받음
+                sum += num;
+
+            }
+            return sum;
+        }
+
+        document.write(`addnum(1,2,3,4,5):${addnum(1,2,3,4,5)} <br>`)
+        document.write(`addnum(1,2,3,4,5,6,7,8,9):${addnum(1,2,3,4,5,6,7,8,9)} <br>`)
+
+    </script> -->
+
+
+    <!-- <h1>함수에서 다른 함수 반환하기</h1>
+    <script>
+        let init = () =>{
+            return function(a,b){ // 반환을 새로운 함수로 반환을 함
+                return a-b>0?a-b:b-a;
+            }
+        }
+        document.write(`inint()(30,20) : ${init()(30,20)}`); // 내부 함수를 한번더 호출해서 내부 내부 함수 호출이다
+    </script> -->
+
+
+    <!-- <h1>타이머 함수</h1>
+    <script>
+        let count = 0;
+        let timer = setInterval(()=> {
+            document.write(`안녕하세요`)
+            count ++;
+            if(count==5) clearInterval(timer); // clearInterval로 타이머 함수를 멈춘다
+        },2000) // 2초마다 반복
+        setTimeout(()=>{
+            document.write(`끝`)
+        },11000) // 한번만 수행
+    </script> -->
+</body>
+</html>
