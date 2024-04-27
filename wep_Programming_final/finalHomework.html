@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>지역별 자동제세동기 확인</title>
+    <link rel="stylesheet" href="finalHomework.css">
+</head>
+<body>
+    <!--위치 정보 영역-->
+    <button id="getLocation"> 위치 정보 가져오기</button>
+    <div id="mylocation"></div>
+
+    <!--콤보박스 영역-->
+    <div class="container">
+        <div>
+            <p>지역별 자동제세동기 위치</p>
+        </div>
+        <form>
+            <select id="area">
+                <option value="지역을 선택하십시오!">=== 지역선택 ===</option>
+                <option value="서울">서울</option>
+                <option value="부산">부산</option>
+                <option value="경남">경남</option>
+            </select>
+        </form>
+    </div>
+
+    <!--콤보박스 결과 영역-->
+    <h1 id="tablename"></h1>
+    <div id="result"></div>
+
+    <h1 id="mapname">지도</h1>
+    <!--지도 영역-->
+    <div class="container">
+        
+        <div id="map"></div>
+        <div id="text-container">
+            <h2>거리의 값</h2>
+            <p></p>
+        </div>
+    </div>
+    
+
+    <!--카카오 맵 가져오기-->
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f7a92df9ab3f7ac22b6395b99eca7109"></script>
+    <script src="finalHomework.js"></script>
+</body>
+</html>

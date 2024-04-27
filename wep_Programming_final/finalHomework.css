@@ -1,0 +1,109 @@
+/*전체*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*body 꾸미기*/
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background-color: rgb(255, 211, 26);
+}
+
+/*표(테이블) 꾸미기*/
+table {
+  display: inline-block;
+  width: 300px;
+  margin: 10px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+} th, td {
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+} th {
+  width: 80px;
+} td {
+  width: 210px;
+}
+
+/*위치확인 버튼*/
+button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+} button:hover { /*버튼에 포커스가 올라올때*/
+  background-color: pink;
+}
+
+/*위치정보 영역*/
+#mylocation {
+  padding: 10px 20px;
+}
+
+/*콤보박스와 텍스트 영역*/
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+} .container > div {
+  margin-right: 10px;
+}
+
+/*각 표의 클릭 버튼 효과*/
+.click {
+  cursor: pointer;
+} .click:hover {
+  color: red;
+  background-color: pink;
+} .click:active {
+  color: blue;
+}
+
+/*콤보박스 스타일 표기*/
+select {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  appearance: none;
+} select:focus {/*포커스에 올렸을때*/
+  outline: none;
+  border-color: blue;
+  box-shadow: 0 0 5px rgba(0, 0, 255, 0.5);
+} select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+
+/*텍스트 표기*/
+p {
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+#map {
+  height: 400px;
+  width: 700px;
+  float: left;
+}
+
+#text-container {
+  width: 50%;
+  float: left;
+  padding: 20px;
+}
